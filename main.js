@@ -11,5 +11,6 @@ for(i = 0; i < 256; i++){
 
 function onHover(e){
     console.log(e)
+    e.target.classList.add("grid-black")
 
 }

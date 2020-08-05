@@ -1,7 +1,17 @@
-.container{
+#body{
+    align-items: center;
+}
+
+#container{
     display: grid;
+    width: 75%;
+    height: auto;
 }
 .grids{
     border: 1px solid black;
     padding: 5px;
+}
+
+.grid-black{
+    background-color: black;
 }
