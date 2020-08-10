@@ -20,8 +20,9 @@ const info = document.querySelector("#info");
 const resetBtn = info.querySelector("#reset");
 
 resetBtn.addEventListener("mouseup", function(){
-    const grids = mainGrid.querySelectorAll("#grids");
-    for(i = 0; i < mainGrid.children.length; i++){
-    grids[i].classList.remove("grid-black");
-    }
+    let grids = mainGrid.querySelectorAll(".grids")
+    
+    grids.forEach(element => {
+        element.style.cssText = "background-color: white"
+    });
 })
