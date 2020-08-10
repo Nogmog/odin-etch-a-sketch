@@ -12,7 +12,7 @@ for(i = 0; i < 256; i++){
 
 function onHover(e){
     let f = document.getElementById(e.target.id)
-    f.style.cssText = "background-color: black"
+    f.style.cssText = "background-color: black";
 
 }
 
@@ -20,9 +20,9 @@ const info = document.querySelector("#info");
 const resetBtn = info.querySelector("#reset");
 
 resetBtn.addEventListener("mouseup", function(){
-    let grids = mainGrid.querySelectorAll(".grids")
-    
+    let grids = mainGrid.querySelectorAll(".grids");
+
     grids.forEach(element => {
-        element.style.cssText = "background-color: white"
+        element.style.cssText = "";
     });
 })
