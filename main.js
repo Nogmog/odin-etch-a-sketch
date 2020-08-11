@@ -1,7 +1,7 @@
 const mainGrid = document.querySelector("#container");
 
 function makeGrid(num){
-    numGrids = num**2
+    numGrids = num**2;
     for(i = 0; i < numGrids; i++){
         let newGrid = document.createElement("div");
 
@@ -33,9 +33,12 @@ resetBtn.addEventListener("mouseup", function(){
 
 sizeBtn.addEventListener("mouseup", function(){
     let gridSize = prompt("How big would you like your new grid?", 16)
-    console.log(gridSize)
+
     if(typeof gridSize == "number" || gridSize < 100){
-        console.log("Passed")
+        let mainRemove = mainGrid.querySelectorAll(".grids");
+        mainRemove.forEach(e => {
+            e.remove();
+        })
         makeGrid(gridSize)
     }else{
         alert("Put a number in less than 100")
