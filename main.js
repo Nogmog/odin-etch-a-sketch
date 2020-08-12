@@ -2,7 +2,7 @@ const mainGrid = document.querySelector("#container");
 
 function makeGrid(num){
     numGrids = num**2;
-    
+
     mainGrid.setAttribute("style","grid-template-columns: repeat("+num+", 1fr); grid-template-rows: repeat("+num+", 1fr);");
 
     for(i = 0; i < numGrids; i++){
@@ -11,7 +11,6 @@ function makeGrid(num){
         newGrid.classList.add("grids");
         newGrid.setAttribute("id", i);
         newGrid.addEventListener("mouseover", onHover);
-
         mainGrid.appendChild(newGrid);
     }
 }
