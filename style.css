@@ -5,8 +5,6 @@
 
 #container{
     display: inline-grid;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
     border: 1px solid black;
     justify-self: center;
 }

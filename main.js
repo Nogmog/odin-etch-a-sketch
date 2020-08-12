@@ -2,6 +2,9 @@ const mainGrid = document.querySelector("#container");
 
 function makeGrid(num){
     numGrids = num**2;
+    
+    mainGrid.setAttribute("style","grid-template-columns: repeat("+num+", 1fr); grid-template-rows: repeat("+num+", 1fr);");
+
     for(i = 0; i < numGrids; i++){
         let newGrid = document.createElement("div");
 
