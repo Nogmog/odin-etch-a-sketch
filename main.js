@@ -1,9 +1,10 @@
 const mainGrid = document.querySelector("#container");
+let mode = "black";
 
 function makeGrid(num){
     numGrids = num**2;
 
-    mainGrid.setAttribute("style","grid-template-columns: repeat("+num+", 1fr); grid-template-rows: repeat("+num+", 1fr);");
+    mainGrid.setAttribute("style","grid-template-columns: repeat("+num+", 1fr); grid-template-rows: repeat("+num+", 1fr)");
 
     for(i = 0; i < numGrids; i++){
         let newGrid = document.createElement("div");
@@ -17,13 +18,21 @@ function makeGrid(num){
 
 function onHover(e){
     let f = document.getElementById(e.target.id);
+    console.log(mode)
+    if(mode == "black"){
     f.style.cssText = "background-color: black";
 
+    }else if(mode == "random"){
+        console.log("Random")
+
+    }
 }
 
 const info = document.querySelector("#info");
 const resetBtn = info.querySelector("#reset");
 const sizeBtn = info.querySelector("#size");
+const blkBtn = info.querySelector("#black");
+const rndBtn = info.querySelector("#random");
 
 resetBtn.addEventListener("mouseup", function(){
     let grids = mainGrid.querySelectorAll(".grids");
@@ -46,5 +55,11 @@ sizeBtn.addEventListener("mouseup", function(){
         alert("Put a number in less than 100")
     }
 })
+
+blkBtn.addEventListener("mouseup", changeColour)
+rndBtn.addEventListener("mouseup", changeColour)
+function changeColour(e){
+    mode = e.target.id;
+}
 
 makeGrid(16)
