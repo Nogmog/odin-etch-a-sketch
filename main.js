@@ -18,12 +18,15 @@ function makeGrid(num){
 
 function onHover(e){
     let f = document.getElementById(e.target.id);
-    console.log(mode)
+
     if(mode == "black"){
     f.style.cssText = "background-color: black";
 
     }else if(mode == "random"){
-        console.log("Random")
+        let R = Math.floor(Math.random() * 256);
+        let G = Math.floor(Math.random() * 256);
+        let B = Math.floor(Math.random() * 256);
+        f.style.backgroundColor = "rgb("+R+","+G+","+B+")"
 
     }
 }
@@ -58,8 +61,10 @@ sizeBtn.addEventListener("mouseup", function(){
 
 blkBtn.addEventListener("mouseup", changeColour)
 rndBtn.addEventListener("mouseup", changeColour)
+const modeName = info.querySelector("#colourMode")
 function changeColour(e){
     mode = e.target.id;
+    modeName.textContent = "Mode: " + mode
 }
 
 makeGrid(16)
